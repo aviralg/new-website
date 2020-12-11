@@ -1,51 +1,86 @@
 {% macro social_links(social_config) %}
   <p class="is-size-4">
-    {% if social_config.facebook %}
-      <a class="link" href="https://facebook.com/{{ social_config.facebook }}" target="_blank">
+    {% if social_config.email %}
+      <a class="link" title="Email" href="mailto:{{ social_config.email }}" target="_blank">
         <span class="icon is-medium">
-          <i class="fab fa-facebook"></i>
+          <i class="fa fa-envelope"></i>
         </span>
       </a>
     {% endif %}
-    {% if social_config.twitter %}
-      <a class="link" href="https://twitter.com/{{ social_config.twitter }}" target="_blank">
+    {% if social_config.location %}
+      <a class="link" title="Location" href="{{ social_config.location }}" target="_blank">
         <span class="icon is-medium">
-          <i class="fab fa-twitter"></i>
+          <i class="fa fa-map-marker"></i>
         </span>
       </a>
     {% endif %}
-    {% if social_config.linkedin %}
-      <a class="link" href="https://www.linkedin.com/in/{{ social_config.linkedin }}" target="_blank">
+    {% if social_config.cv %}
+      <a class="link" title="CV" href="{{ social_config.cv }}" target="_blank">
         <span class="icon is-medium">
-          <i class="fab fa-linkedin"></i>
+          <i class="ai ai-cv ai-lg"></i>
+        </span>
+      </a>
+    {% endif %}
+    {% if social_config.orcid %}
+      <a class="link" title="ORCiD" href="https://orcid.org/{{ social_config.orcid }}" target="_blank">
+        <span class="icon is-medium">
+          <i class="ai ai-orcid"></i>
+        </span>
+      </a>
+    {% endif %}
+    {% if social_config.dblp %}
+      <a class="link" title="dblp" href="https://dblp.uni-trier.de/pid/{{ social_config.dblp }}.html" target="_blank">
+        <span class="icon is-medium">
+          <i class="ai ai-dblp ai-lg"></i>
+        </span>
+      </a>
+    {% endif %}
+    {% if social_config.google_scholar %}
+      <a class="link" title="Google Scholar" href="https://scholar.google.com/citations?user={{ social_config.google_scholar }}" target="_blank">
+        <span class="icon is-medium">
+          <i class="ai ai-google-scholar"></i>
         </span>
       </a>
     {% endif %}
     {% if social_config.github %}
-      <a class="link" href="https://github.com/{{ social_config.github }}" target="_blank">
+      <a class="link" title="Github" href="https://github.com/{{ social_config.github }}" target="_blank">
         <span class="icon is-medium">
           <i class="fab fa-github"></i>
         </span>
       </a>
     {% endif %}
     {% if social_config.stackoverflow %}
-      <a class="link" href="https://stackoverflow.com/users/{{ social_config.stackoverflow }}" target="_blank">
+      <a class="link" title="StackOverflow" href="https://stackoverflow.com/users/{{ social_config.stackoverflow }}" target="_blank">
         <span class="icon is-medium">
           <i class="fab fa-stack-overflow"></i>
         </span>
       </a>
     {% endif %}
-    {% if social_config.keybase %}
-      <a class="link" href="https://keybase.io/{{ social_config.keybase }}" target="_blank">
+    {% if social_config.facebook %}
+      <a class="link" title="Facebook" href="https://facebook.com/{{ social_config.facebook }}" target="_blank">
         <span class="icon is-medium">
-          <i class="fab fa-keybase"></i>
+          <i class="fab fa-facebook"></i>
         </span>
       </a>
     {% endif %}
-    {% if config.generate_feed %}
-      <a class="link" href='{{ config.base_url }}/{{ config.feed_filename }}' target="_blank">
+    {% if social_config.linkedin %}
+      <a class="link" title="Linkedin" href="https://www.linkedin.com/in/{{ social_config.linkedin }}" target="_blank">
         <span class="icon is-medium">
-          <i class="fas fa-rss"></i>
+          <i class="fab fa-linkedin"></i>
+        </span>
+      </a>
+    {% endif %}
+    {% if social_config.twitter %}
+      <a class="link" title="Twitter" href="https://twitter.com/{{ social_config.twitter }}" target="_blank">
+        <span class="icon is-medium">
+          <i class="fab fa-twitter"></i>
+        </span>
+      </a>
+    {% endif %}
+    {% if social_config.keybase %}
+      <a class="link" title="Keybase" href="https://keybase.io/{{ social_config.keybase }}" target="_blank">
+        <span class="icon is-medium">
+          <i class="fab fa-keybase"></i>
         </span>
       </a>
     {% endif %}

@@ -49,12 +49,15 @@ name = "Aviral Goel"
 avatar = "images/aviral.jpg"
 
 [extra.social]
-facebook = "RatanShreshtha"
-github = "RatanShreshtha"
-keybase = "RatanShreshtha"
-linkedin = "ratanshreshtha"
-stackoverflow = "3728911"
-twitter = "RatanShreshtha"
+location = "https://goo.gl/maps/7KerhccCRtxJnmPN7"
+github = "aviralg"
+linkedin = "aviralgoel"
+twitter = "TheAviralGoel"
+google_scholar = "_cEObskAAAAJ"
+orcid = "0000-0002-0814-5015"
+email = "aviral@aviral.io"
+cv = "cv/cv.pdf"
+dblp = "209/9875"
 
 [extra.analytics]
 google = "UA-176984489-2"
