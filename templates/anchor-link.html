@@ -1,0 +1,16 @@
+{% if level == 6 %}
+{% set anchor = "######" %}
+{% elif level == 5 %}
+{% set anchor = "#####" %}
+{% elif level == 4 %}
+{% set anchor = "####" %}
+{% elif level == 3 %}
+{% set anchor = "###" %}
+{% elif level == 2 %}
+{% set anchor = "##" %}
+{% elif level == 1 %}
+{% set anchor = "#" %}
+{% else %}
+{% set anchor = "" %}
+{% endif %}
+<a href="#{{ id }}">{{ anchor }}</a>
