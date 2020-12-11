@@ -46,7 +46,7 @@ webmanifest = "/icons/site.webmanifest"
 
 [extra.author]
 name = "Aviral Goel"
-avatar = "/images/aviral.jpg"
+avatar = "images/aviral.jpg"
 
 [extra.social]
 facebook = "RatanShreshtha"
