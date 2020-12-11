@@ -1,5 +1,5 @@
-base_url = "https://deepthought-theme.netlify.app"
-title = "DeepThought"
+base_url = "http://aviral.io"
+title = "Aviral Goel"
 default_language = "en"
 highlight_code = true
 highlight_theme = "one-dark"
@@ -45,8 +45,8 @@ safari_pinned_tab = "/icons/safari-pinned-tab.svg"
 webmanifest = "/icons/site.webmanifest"
 
 [extra.author]
-name = "DeepThought"
-avatar = "/images/avatar.png"
+name = "Aviral Goel"
+avatar = "/images/aviral.jpg"
 
 [extra.social]
 facebook = "RatanShreshtha"
