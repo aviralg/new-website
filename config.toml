@@ -30,7 +30,8 @@ anchors = "on"
 
 
 navbar_items = [
-	{ url = "$BASE_URL/", name = "Home" },
+  { url = "$BASE_URL/cv/cv.pdf", name = "CV" },
+  { url = "$BASE_URL/publications", name = "Publications" },
 	{ url = "$BASE_URL/posts", name = "Posts" },
 	{ url = "$BASE_URL/docs", name = "Docs" },
 	{ url = "$BASE_URL/tags", name = "Tags" },
