@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ config.title }} | {{ section.title }}
+{% endblock title %}
+
+{% block header %}
+<header class='hero'>
+    <div class='hero-body'>
+        <div class='container'>
+            <div class='has-text-centered'>
+                <h1 class='title'>{{ section.title }}</h1>
+                <h2 class='subtitle'>{{ section.description }}</h2>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="section py-0">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8 publications">
+                {% if paginator %}
+                {% set publications = paginator.pages %}
+                {% else %}
+                {% set publications = section.pages %}
+                {% endif %}
+
+                {% for publication in publications %}
+                <article class="box publication">
+                    <div class="columns is-narrow is-gapless is-mobile mb-2">
+                        <div class="column">
+                            <h1 class="title is-4">{{ publication.title }}</h1>
+                            {% if publication.extra.subtitle %}
+                            <h1 class="subtitle is-5">{{ publication.extra.subtitle }} </h1>
+                            {% endif %}
+                        </div>
+                        {% if publication.extra.venue.url %}
+                        <div class="column is-2-desktop is-2-tablet is-3-mobile">
+                            <a class="is-pulled-right tag is-link" href="{{ publication.extra.venue.url }}">
+                               {{publication.extra.venue.name}}'{{publication.extra.venue.year % 1000 }}
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <h1 class="subtitle mb-2 is-6">
+                        {% set author_count = publication.extra.authors | length %}
+                        {% for index in range(end=author_count) %}
+                            <span class="is-light author">{{ publication.extra.authors[index] }}
+                            {% if index + 1 != author_count %}
+                            •
+                            {% endif %}
+                            </span>
+                        {% endfor %}
+                    </h1>
+                    <div class="columns is-mobile is-gapless is-multiline mb-2">
+                        <div class="column is-two-fifths is-pulled-left is-vcentered">
+                            {% if publication.extra.pdf %}
+                            <a class="link" title="PDF" href="{{ config.base_url }}/publications/{{ publication.extra.pdf }}" target="_blank">
+                                <span class="icon"><i class="fa fa-file-pdf fa-lg"></i></span>
+                            </a>
+                            {% endif %}
+                            {% if publication.extra.talk.youtube %}
+                            <a class="is-centered" title="Talk Video" href="{{ publication.extra.talk.youtube }}" target="_blank">
+                                <span class="icon">
+                                    <i class="fa fa-youtube fa-lg"></i>
+                                </span>
+                            </a>
+                            {% endif %}
+                            {% if publication.extra.citation.bibtex %}
+                            <div class="dropdown is-hoverable citation">
+                                <div class="dropdown-trigger">
+                                    <span class="icon" aria-haspopup="true" aria-controls="bibtex-menu">
+                                        <i class="fas fa-at" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="dropdown-menu" id="bibtex-menu" role="menu">
+                                    <div class="dropdown-content">
+                                        <div href="#" class="dropdown-item bibtex">
+                                            <pre class="has-background-white p-0"><code>{{ publication.extra.citation.bibtex }}</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if publication.extra.doi %}
+                            <a class="link" title="DOI" href="https://doi.org/{{ publication.extra.doi }}" target="_blank">
+                                <figure class="image is-24x24 is-inline-block">
+                                    <img class="is-rounded" title="Reusable" src="{{ config.base_url }}/images/doi.svg"></img>
+                                </figure>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div class="artifact column is-three-fifths has-text-right is-vcentered">
+                            {% if publication.extra.artifact.functional %}
+                            <a class="is-inline-block link" href="{{ publication.extra.artifact.functional }}">
+                                <img class="is-rounded image is-24x24" title="Functional" src="{{ config.base_url }}/images/artifact-functional.jpg"></img>
+                            </a>
+                            {% endif %}
+                            {% if publication.extra.artifact.reusable %}
+                            <a class="is-inline-block link" href="{{ publication.extra.artifact.reusable }}">
+                                <img class="is-rounded image is-24x24" title="Reusable" src="{{ config.base_url }}/images/artifact-reusable.jpg"></img>
+                            </a>
+                            {% endif %}
+                            {% if publication.extra.artifact.available %}
+                            <a class="is-inline-block link" href="{{ publication.extra.artifact.available }}">
+                                <img class="is-rounded image is-24x24" title="Available" src="{{ config.base_url }}/images/artifact-available.jpg"></img>
+                            </a>
+                            {% endif %}
+                            {% if publication.extra.artifact.zenodo %}
+                            <a class="is-inline-block link" title="Artifact on Zenodo" href="{{ publication.extra.artifact.zenodo }}" target="_blank">
+                                <img class="image" src="{{ config.base_url }}/images/zenodo.png">
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if publication.taxonomies.tags %}
+                    <div class="columns tags is-multiline is-centered">
+                        {% for tag in publication.taxonomies.tags %}
+                        <a class="tag is-link is-light is-centered" href='{{ get_taxonomy_url(kind='tags', name=tag) }}'>
+                            {{ tag }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
