@@ -164,3 +164,42 @@
     </a>
   </p>
 {% endmacro %}
+
+{% macro render_page_group(group, kind) %}
+<div class="columns has-text-centered is-mobile is-gapless is-narrow">
+    <div class="column">
+        <div class="columns">
+            <div class="column is-8 is-offset-2 is-gapless is-mobile">
+                <a class="link title is-3 mb-4" id="{{ kind }}-{{ group.name | slugify }}" href="{{ get_taxonomy_url(kind=kind, name=group.name) }}">{{ group.name }}</a>
+                {% set page_count = group.pages | length %}
+                {% set column_count = page_count + page_count % 2 %}
+                {% set page_count_half = column_count / 2 %}
+                <div class="columns pt-4">
+                    <div class="column is-half pb-0">
+                        {% for page_index in range(end=page_count) %}
+                        {% if page_index < page_count_half %}
+                        {% set page = group.pages[page_index] %}
+                        <div class="mb-2">
+                            <a class="link" href="{{page.permalink }}">{{ page.title }}</a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% if page_count_half != page_count %}
+                    <div class="column is-half pb-0">
+                        {% for page_index in range(end=page_count) %}
+                        {% if page_index >= page_count_half %}
+                        {% set page = group.pages[page_index] %}
+                        <div class="mb-2">
+                            <a class="link" href="{{page.permalink }}">{{ page.title }}</a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
