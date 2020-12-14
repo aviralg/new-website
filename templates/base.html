@@ -75,12 +75,22 @@
           </a>
           {% endfor %}
           {% if config.extra.social.cv %}
-          <a class="navbar-item" href="{{ config.base_url }}/{{ config.extra.social.cv }}" target="_blank">
+          <a class="navbar-item" href="{{ config.base_url }}/{{ config.extra.social.cv }}" target="_blank" title="CV">
               <span class="icon">
                   <i class="ai ai-cv ai-lg"></i>
               </span>
           </a>
           {% endif %}
+          <a class="navbar-item" href="{{ config.base_url }}/categories" title="Writings">
+              <span class="icon">
+                  <i class="fa fa-pencil-alt"></i>
+              </span>
+          </a>
+          <a class="navbar-item" href="{{ config.base_url }}/tags" title="Tags">
+              <span class="icon">
+                  <i class="fa fa-tag"></i>
+              </span>
+          </a>
           {% if config.generate_feed %}
           <a class="navbar-item" href="{{ config.base_url }}/{{ config.feed_filename }}" title="RSS" target="_blank">
               <span class="icon">

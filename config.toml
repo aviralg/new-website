@@ -28,13 +28,8 @@ anchors = "on"
 
 [extra]
 
-
 navbar_items = [
   { url = "$BASE_URL/publications", name = "Publications" },
-	{ url = "$BASE_URL/posts", name = "Posts" },
-	{ url = "$BASE_URL/docs", name = "Docs" },
-	{ url = "$BASE_URL/tags", name = "Tags" },
-	{ url = "$BASE_URL/categories", name = "Categories" },
 ]
 
 [extra.favicon]
