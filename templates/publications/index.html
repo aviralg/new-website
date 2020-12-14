@@ -62,6 +62,13 @@
                                 <span class="icon"><i class="fa fa-file-pdf fa-lg"></i></span>
                             </a>
                             {% endif %}
+                            {% if publication.extra.doi %}
+                            <a class="link" title="DOI" href="https://doi.org/{{ publication.extra.doi }}" target="_blank">
+                                <figure class="image is-24x24 is-inline-block">
+                                    <img class="is-rounded" title="Reusable" src="{{ config.base_url }}/images/doi.svg"></img>
+                                </figure>
+                            </a>
+                            {% endif %}
                             {% if publication.extra.talk.youtube %}
                             <a class="is-centered" title="Talk Video" href="{{ publication.extra.talk.youtube }}" target="_blank">
                                 <span class="icon">
@@ -84,13 +91,6 @@
                                     </div>
                                 </div>
                             </div>
-                            {% endif %}
-                            {% if publication.extra.doi %}
-                            <a class="link" title="DOI" href="https://doi.org/{{ publication.extra.doi }}" target="_blank">
-                                <figure class="image is-24x24 is-inline-block">
-                                    <img class="is-rounded" title="Reusable" src="{{ config.base_url }}/images/doi.svg"></img>
-                                </figure>
-                            </a>
                             {% endif %}
                         </div>
                         <div class="artifact column is-three-fifths has-text-right is-vcentered">
