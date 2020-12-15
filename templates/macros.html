@@ -269,7 +269,9 @@
 {% macro render_publication_header(publication) %}
     <div class="columns is-narrow is-gapless is-mobile mb-2">
         <div class="column">
-            <h1 class="title is-4">{{ publication.title }}</h1>
+            <a class="link" href="{{ publication.permalink }}">
+                <h1 class="title is-4">{{ publication.title }}</h1>
+            </a>
             {% if publication.extra.subtitle %}
             <h1 class="subtitle is-5">{{ publication.extra.subtitle }} </h1>
             {% endif %}
