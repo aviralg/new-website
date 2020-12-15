@@ -47,8 +47,11 @@
     </div>
   </div>
 </section>
-{% endblock content %} {% block pagination%} {% if page.earlier or page.later or
-page.lighter or page.heavier %}
+{% endblock content %}
+
+
+{% block pagination%}
+{% if page.earlier or page.later or page.lighter or page.heavier %}
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -106,8 +109,11 @@ page.lighter or page.heavier %}
     </div>
   </div>
 </section>
-{% endif %} {% endblock %} {% block comment %} {% if page.extra.comments and
-config.extra.commenting.hyvor %}
+{% endif %}
+{% endblock %}
+
+{% block comment %}
+{% if page.extra.comments and config.extra.commenting.hyvor %}
 <section class="section pt-0">
   <div class="container">
     <div class="columns is-centered">
@@ -117,8 +123,11 @@ config.extra.commenting.hyvor %}
     </div>
   </div>
 </section>
-{% endif %} {% endblock %} {% block custom_js %} {% if page.extra.comments and
-config.extra.commenting.hyvor %}
+{% endif %}
+{% endblock %}
+
+{% block custom_js %}
+{% if page.extra.comments and config.extra.commenting.hyvor %}
 <script type="text/javascript">
   var HYVOR_TALK_WEBSITE = {{ config.extra.commenting.hyvor }};
   var HYVOR_TALK_CONFIG = {
@@ -131,4 +140,5 @@ config.extra.commenting.hyvor %}
   src="//talk.hyvor.com/web-api/embed"
   type="text/javascript"
 ></script>
-{% endif %} {% endblock %}
+{% endif %}
+{% endblock %}
