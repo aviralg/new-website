@@ -16,35 +16,19 @@
 <section class="section py-0">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-8">
-        {% if paginator %}
-        {% set pages = paginator.pages %}
-        {% else %}
-        {% set pages = term.pages %}
-        {% endif %}
+        <div class="column is-8">
+                {% if paginator %}
+                {% set pages = paginator.pages %}
+                {% else %}
+                {% set pages = term.pages %}
+                {% endif %}
 
-        {% for page in pages %}
-        <article class="box">
-          <h1 class="title">
-            <a class="link" href="{{ page.permalink }}">
-              {{ page.title }}
-            </a>
-          </h1>
-          <h2 class="subtitle">
-            {{ page.description }}
-          </h2>
-
-          <div class="mb-4">
-            {{ macros::page_content_metadata(page=page) }}
-            {{ macros::page_publish_metadata(page=page) }}
-          </div>
-
-          <a class="read-more" href="{{ page.permalink }}">
-            Read More <span class="icon is-small"><i class="fas fa-arrow-right fa-xs"></i></span>
-          </a>
-        </article>
+            {% for page in pages %}
+            <article class="box">
+                {{ macros::render_page_header(page=page) }}
+            </article>
         {% endfor %}
-      </div>
+        </div>
     </div>
   </div>
 </section>
