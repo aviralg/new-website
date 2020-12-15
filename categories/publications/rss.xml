@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Aviral Goel - Publications</title>
+        <link>https://aviralg.github.io/new-website</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://aviralg.github.io/new-website/categories/publications/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sun, 01 Nov 2020 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Designing Types for R, Empirically</title>
+            <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+            <link>https://aviralg.github.io/new-website/publications/designing-types-for-r-empirically/</link>
+            <guid>https://aviralg.github.io/new-website/publications/designing-types-for-r-empirically/</guid>
+            <description>&lt;p&gt;The R programming language is widely used in a variety of domains. It was designed to favor an interactive
+style of programming with minimal syntactic and conceptual overhead. This design is well suited to data
+analysis, but a bad fit for tools such as compilers or program analyzers. In particular, R has no type annotations,
+and all operations are dynamically checked at runtime. The starting point for our work are the two questions:
+&lt;em&gt;what expressive power is needed to accurately type R code?&lt;&#x2F;em&gt; and &lt;em&gt;which type system is the R community willing to
+adopt?&lt;&#x2F;em&gt; Both questions are difficult to answer without actually experimenting with a type system. The goal of
+this paper is to provide data that can feed into that design process. To this end, we perform a large corpus
+analysis to gain insights in the degree of polymorphism exhibited by idiomatic R code and explore potential
+benefits that the R community could accrue from a simple type system. As a starting point, we infer type
+signatures for 25,215 functions from 412 packages among the most widely used open source R libraries. We
+then conduct an evaluation on 8,694 clients of these packages, as well as on end-user code from the Kaggle
+data science competition website.&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>On the Design, Implementation, and Use of Laziness in R</title>
+            <pubDate>Sun, 06 Oct 2019 00:00:00 -0400</pubDate>
+            <link>https://aviralg.github.io/new-website/publications/on-the-design-implementation-and-use-of-laziness-in-r/</link>
+            <guid>https://aviralg.github.io/new-website/publications/on-the-design-implementation-and-use-of-laziness-in-r/</guid>
+            <description>&lt;p&gt;The R programming language has been lazy for over twenty-five years. This paper presents a review of the design and implementation of call-by-need in R, and a data-driven study of how generations of programmers have put laziness to use in their code. We analyze 16,707 packages and observe the creation of 270.9 B promises. Our data suggests that there is little supporting evidence to assert that programmers use laziness to avoid unnecessary computation or to operate over infinite data structures. For the most part R code appears to have been written without reliance on, and in many cases even knowledge of, delayed argument evaluation. The only significant exception is a small number of packages which leverage call-by-need for meta-programming.&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Correctness of Speculative Optimizations with Dynamic Deoptimization</title>
+            <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+            <link>https://aviralg.github.io/new-website/publications/correctness-of-speculative-optimizations-with-dynamic-deoptimization/</link>
+            <guid>https://aviralg.github.io/new-website/publications/correctness-of-speculative-optimizations-with-dynamic-deoptimization/</guid>
+            <description>&lt;p&gt;High-performance dynamic language implementations make heavy use of speculative optimizations to achieve speeds close to statically compiled languages. These optimizations are typically performed by a just-in-time compiler that generates code under a set of assumptions about the state of the program and its environment. In certain cases, a program may execute code compiled under assumptions that are no longer valid. The implementation must then deoptimize the program on-the-!y; this entails &amp;quot;nding semantically equivalent code that does not rely on invalid assumptions, translating program state to that expected by the target code, and transferring control. This paper looks at the interaction between optimization and deoptimization, and shows that reasoning about speculation is surprisingly easy when assumptions are made explicit in the program representation. This insight is demonstrated on a compiler intermediate representation, named &lt;code&gt;sourir&lt;&#x2F;code&gt;, modeled after the high-level representation for a dynamic language. Traditional compiler optimizations such as constant folding, unreachable code elimination, and function inlining are shown to be correct in the presence of assumptions. Furthermore, the paper establishes the correctness of compiler transformations specific to deoptimization: namely unrestricted deoptimization, predicate hoisting, and assume composition.&lt;&#x2F;p&gt;
+</description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://aviralg.github.io/new-website/sitemap.xml
